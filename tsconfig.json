@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "lib": ["es2016"],
+    "paths": {
+      "*": ["src/*"]
+    },
+    "allowJs": true,
+    "target": "es2016",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "typeRoots": ["node_modules/@types"]
+  },
+  "include": ["src/**/*.ts"]
+}

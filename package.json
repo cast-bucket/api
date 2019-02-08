@@ -1,0 +1,41 @@
+{
+  "name": "api",
+  "version": "0.0.1",
+  "description": "Backend api for cast-bucket.com",
+  "author": "Shriram Balaji",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run serve",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
+    "build": "rimraf dist && npm run build-ts && npm run tslint",
+    "serve-debug": "nodemon --inspect dist/index.js",
+    "watch-debug": "concurrently -k npm:watch-ts npm:serve-debug",
+    "serve": "cross-env node dist/index.js"
+  },
+  "dependencies": {
+    "fastify": "^1.14.1",
+    "ts-node": "^8.0.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.0",
+    "@types/node": "^10.12.23",
+    "concurrently": "^4.1.0",
+    "cross-env": "^5.2.0",
+    "dotenv": "^6.2.0",
+    "jest": "^24.1.0",
+    "nodemon": "^1.18.9",
+    "rimraf": "^2.6.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cast-bucket/api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cast-bucket/api/issues"
+  },
+  "homepage": "https://github.com/cast-bucket/api#readme"
+}
