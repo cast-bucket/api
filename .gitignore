@@ -65,3 +65,4 @@ private.json
 
 # typescript build files
 dist/
+lib/

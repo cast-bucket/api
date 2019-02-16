@@ -2,15 +2,17 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "*": ["src/*"]
+      "*": ["src/*"],
+      "credentials": ["src/credentials"]
     },
-    "allowJs": true,
+    // "allowJs": true,
     "target": "es2016",
     "module": "commonjs",
     "moduleResolution": "node",
-    "sourceMap": true,
-    "outDir": "./dist",
+    "sourceMap": false,
+    "outDir": "./lib",
+    "resolveJsonModule": true,
     "typeRoots": ["node_modules/@types"]
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts", "src/**/*.json", "src/*.ts"]
 }

@@ -5,19 +5,23 @@
   "author": "Shriram Balaji",
   "license": "MIT",
   "scripts": {
-    "start": "cross-env node dist/index.js",
+    "start": "cross-env node lib/index.js",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "watch-ts": "tsc -w",
-    "build": "rimraf dist && npm run build-ts && npm run tslint",
-    "serve-debug": "nodemon --inspect dist/index.js",
+    "build-ts": "tsc ",
+    "build": "rimraf lib && npm run build-ts && npm run lint",
+    "serve-debug": "nodemon --inspect lib/index.js",
     "debug": "concurrently -k npm:watch-ts npm:serve-debug"
   },
   "dependencies": {
+    "encodeurl": "^1.0.2",
     "fastify": "^1.14.1",
     "firebase-admin": "^7.0.0",
+    "http-errors": "^1.7.1",
     "ts-node": "^8.0.2"
   },
   "devDependencies": {
+    "@types/http-errors": "^1.6.1",
     "@types/jest": "^24.0.0",
     "@types/node": "^10.12.23",
     "concurrently": "^4.1.0",
