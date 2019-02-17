@@ -22,7 +22,7 @@ const Router = (app: fastify.FastifyInstance, options, next) => {
   app.get("/podcasts/:categoryId", fetchPodcastsByCategory);
   app.get("/podcasts/:categoryId/:podcastId", fetchPodcast);
   // feed
-  app.get("/feed/:feedUrl", parseFeed);
+  app.get("/feed", parseFeed);
 
   next();
 };
