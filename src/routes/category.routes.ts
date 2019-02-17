@@ -1,5 +1,5 @@
 import * as httpError from "http-errors";
-import { getAllCategories, getCategory } from "../models/categoryModel";
+import { getAllCategories, getCategory } from "../models/category.model";
 
 export const fetchAllCategories = async (req, res) => {
   try {
@@ -18,7 +18,7 @@ export const fetchAllCategories = async (req, res) => {
 
 export const fetchCategory = async (req, res) => {
   try {
-    const categoryId: string = req.params["categoryId"];
+    const categoryId: string = req.params.categoryId;
     if (!categoryId) throw httpError(400, "Missing or invalid params: categoryId");
     const results: any = await getCategory(categoryId);
     res.code(200).send(results);

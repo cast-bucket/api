@@ -1,12 +1,12 @@
-import * as admin from "firebase-admin";
-import credentials from "./credentials";
+import * as firebase from "firebase-admin";
+import { credentials } from "./config";
 
 const databaseURL: string = process.env.FIREBASE_URL;
 
-admin.initializeApp({
-  credential: admin.credential.cert(credentials),
+firebase.initializeApp({
+  credential: firebase.credential.cert(credentials),
   databaseURL
 });
 
-export const auth: admin.auth.Auth = admin.auth();
-export const db: admin.database.Database = admin.database();
+export const auth: firebase.auth.Auth = firebase.auth();
+export const db: firebase.database.Database = firebase.database();

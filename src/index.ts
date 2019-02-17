@@ -19,9 +19,7 @@ const server: fastify.FastifyInstance<Server, IncomingMessage, ServerResponse> =
 );
 
 server.listen(PORT, (error: Error, address: string) => {
-  if (error) {
-    server.log.error(error.message);
-  }
+  if (error) server.log.error(error.message);
   server.log.info(`Server is listening on ${address}`);
 });
 

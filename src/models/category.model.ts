@@ -1,6 +1,7 @@
-import { db } from "../firebase";
 import * as firebase from "firebase-admin";
+import { db } from "../firebase";
 import { transformKeys } from "./util";
+
 const categoriesReference = db.ref("categories");
 
 export const getAllCategories: any = async () => {

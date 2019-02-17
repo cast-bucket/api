@@ -61,7 +61,7 @@ typings/
 .next
 
 # private credentials
-private.json
+credentials.json
 
 # typescript build files
 dist/
