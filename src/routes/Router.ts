@@ -21,6 +21,7 @@ const Router = (app: fastify.FastifyInstance, options, next) => {
   app.get("/podcasts", fetchAllPodcasts);
   app.get("/podcasts/:categoryId", fetchPodcastsByCategory);
   app.get("/podcasts/:categoryId/:podcastId", fetchPodcast);
+
   // feed
   app.get("/feed", parseFeed);
 
