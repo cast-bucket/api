@@ -14,7 +14,8 @@
     "serve-debug": "nodemon --inspect lib/server.js",
     "debug": "concurrently -k npm:watch-ts npm:serve-debug",
     "prettier": "prettier --write \"{,!(node_modules|lib|build|coverage)/**/}*.{js,jsx,ts,tsx,json}\"",
-    "precommit": "npm run lint:fix && npm run prettier && npm run build && npm run test",
+    "precommit": "npm run lint:fix && npm run prettier",
+    "prepush": "npm run build && npm run test",
     "test": "jest",
     "spec": "jest -c jest.config.integration.js"
   },
