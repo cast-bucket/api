@@ -67,5 +67,5 @@ credentials.json
 dist/
 lib/
 
-#
-now.json
+# 
+tmp
