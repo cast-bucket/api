@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "*": ["src/*"],
+      "credentials": ["src/credentials"]
+    },
+    // "allowJs": true,
+    "target": "es2016",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": false,
+    "outDir": "./lib",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "typeRoots": ["node_modules/@types"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.json", "src/*.ts", "*.ts"]
+}
