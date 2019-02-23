@@ -16,16 +16,19 @@
     "prettier": "prettier --write \"{,!(node_modules|lib|build|coverage)/**/}*.{js,jsx,ts,tsx,json}\"",
     "precommit": "npm run lint:fix && npm run prettier",
     "prepush": "npm run build && npm run test",
-    "test": "jest",
-    "spec": "jest -c jest.config.integration.js"
+    "test": "jest --coverage",
+    "spec": "jest -c jest.config.integration.js",
+    "test:all": "npm run test && npm run spec"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "encodeurl": "^1.0.2",
+    "fast-memoize": "^2.5.1",
     "fastify": "^1.14.1",
     "fastify-plugin": "^1.5.0",
     "firebase-admin": "^7.0.0",
     "http-errors": "^1.7.1",
+    "param-case": "^2.1.1",
     "rss-parser": "^3.6.2",
     "ts-node": "^8.0.2"
   },
