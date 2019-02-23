@@ -1,9 +1,10 @@
-import * as httpError from "http-errors";
+import firebase from "firebase-admin";
+import httpError from "http-errors";
 import { getAllPodcasts, getPodcast, getPodcastsByCategory } from "../models/podcast.model";
 
 export const fetchAllPodcasts = async (req, res) => {
   try {
-    const results: any = await getAllPodcasts();
+    const results: firebase.database.DataSnapshot = await getAllPodcasts();
     res.code(200).send(results);
   } catch (error) {
     res.code(error.statusCode || 500).send({ message: error.message });

@@ -1,5 +1,5 @@
-import * as httpError from "http-errors";
-import * as RSSParser from "rss-parser";
+import httpError from "http-errors";
+import RSSParser from "rss-parser";
 const parserOptions = {};
 const RssParser: any = RSSParser;
 

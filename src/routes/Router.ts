@@ -1,9 +1,10 @@
-import * as fastify from "fastify";
+import fastify from "fastify";
+import { getProgrammingLanguages } from "../models/category.model";
 import { fetchAllCategories, fetchCategory } from "./category.routes";
 import { parseFeed } from "./feed.routes";
 import { fetchAllPodcasts, fetchPodcast, fetchPodcastsByCategory } from "./podcast.routes";
 
-const Router = (app: fastify.FastifyInstance, options, next) => {
+const Router = async (app: fastify.FastifyInstance, options, next) => {
   // misc
   app.get("/", (request, response) => {
     response.send("Hello!");

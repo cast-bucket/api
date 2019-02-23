@@ -1,4 +1,4 @@
-import * as fastify from "fastify";
+import fastify from "fastify";
 import { IncomingMessage, Server, ServerResponse } from "http";
 import "./env";
 
@@ -25,4 +25,5 @@ server.listen(PORT, (error: Error, address: string) => {
 
 // register all routes
 server.register(Router, { prefix: `/${API_VERSION}` });
+
 export default server;

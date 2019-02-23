@@ -1,6 +1,6 @@
 import axios from "axios";
 import { config } from "dotenv";
-import * as path from "path";
+import path from "path";
 
 describe("GET /feed", () => {
   beforeAll(() => {

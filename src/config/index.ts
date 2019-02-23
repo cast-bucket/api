@@ -1,5 +1,5 @@
-import * as fs from "fs";
-import * as path from "path";
+import fs from "fs";
+import path from "path";
 
 const readCredentials = (credentialsFileName, fallbackFileName) => {
   if (!fs.existsSync(path.join(__dirname, credentialsFileName))) {

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { config } from "dotenv";
-import * as path from "path";
+import path from "path";
 
 let BASE_URL;
 describe("GET /podcasts", () => {
@@ -13,5 +13,19 @@ describe("GET /podcasts", () => {
     const response: any = await axios.get(`${BASE_URL}/v1/podcasts`);
     expect(response.status).toEqual(200);
     expect(response.data).toBeObject();
+  });
+
+  it("should return podcasts of a specific category", async () => {
+    const response: any = await axios.get(`${BASE_URL}/v1/podcasts/agile`);
+    expect(response.status).toEqual(200);
+    expect(response.data).toBeObject();
+    expect(Object.keys(response.data)).toBeArrayOfSize(4);
+  });
+
+  it("should return podcasts of a specific programming language", async () => {
+    const response: any = await axios.get(`${BASE_URL}/v1/podcasts/js`);
+    expect(response.status).toEqual(200);
+    expect(response.data).toBeObject();
+    expect(Object.keys(response.data)).toBeArrayOfSize(17);
   });
 });
