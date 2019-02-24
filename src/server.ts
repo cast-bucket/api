@@ -1,4 +1,5 @@
 import fastify from "fastify";
+import fastifyCors from "fastify-cors";
 import { IncomingMessage, Server, ServerResponse } from "http";
 import "./env";
 
@@ -25,5 +26,12 @@ server.listen(PORT, (error: Error, address: string) => {
 
 // register all routes
 server.register(Router, { prefix: `/${API_VERSION}` });
+
+// enable cors
+server.register(fastifyCors, {
+  origin: [/\.cast-bucket\.com:?(\d*)$/],
+  allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept"],
+  credentials: true
+});
 
 export default server;

@@ -39,11 +39,21 @@ const languageMap: object = {
   reasonml: "reason-ml"
 };
 
+/**
+ * Checks if given input is a supported language
+ *
+ * @param lang - input language
+ */
 const isSupportedLanguage = (lang: string) => {
   const key = languageMap[lang] || lang;
   return supportedProgrammingLanguages.includes(key);
 };
 
+/**
+ * transforms input categoryId to a format accepted by the database category identifier
+ *
+ * @param categoryId - The input categoryId
+ */
 export const transformCategory = (categoryId: string) => {
   let output: string;
   output = languageMap[categoryId] ? languageMap[categoryId] : paramCase(categoryId);
