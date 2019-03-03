@@ -63,9 +63,8 @@ typings/
 # private credentials
 credentials.json
 
-# typescript build files
-dist/
-lib/
+# ignore tests in build files
+lib/__tests__
 
 # Certificates and keys
 *.pem
