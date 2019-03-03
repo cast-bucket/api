@@ -5,34 +5,38 @@
   "author": "Shriram Balaji",
   "license": "MIT",
   "scripts": {
-    "start": "cross-env node lib/server.js",
+    "start": "cross-env node lib/index.js",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "lint:fix": "tslint -p tsconfig.json --fix",
     "watch-ts": "tsc -w",
     "build-ts": "tsc -b",
     "build": "rimraf lib && npm run build-ts",
-    "serve-debug": "nodemon --inspect lib/server.js",
+    "serve-debug": "nodemon --inspect lib/index.js",
     "debug": "concurrently -k npm:watch-ts npm:serve-debug",
     "prettier": "prettier --write \"{,!(node_modules|lib|build|coverage)/**/}*.{js,jsx,ts,tsx,json}\"",
-    "precommit": "npm run lint:fix && npm run prettier",
-    "prepush": "npm run build && npm run test",
+    "precommit": "npm run lint:fix && npm run prettier && npm run build",
+    "prepush": "npm run test",
     "test": "jest --coverage",
     "spec": "jest -c jest.config.integration.js",
-    "test:all": "npm run test && npm run spec"
+    "test:all": "npm run test && npm run spec",
+    "deploy": "npm run build && now"
   },
   "dependencies": {
+    "atob": "^2.1.2",
     "axios": "^0.18.0",
     "encodeurl": "^1.0.2",
     "fast-memoize": "^2.5.1",
     "fastify": "^1.14.1",
+    "fastify-cors": "^1.0.0",
     "fastify-plugin": "^1.5.0",
     "firebase-admin": "^7.0.0",
     "http-errors": "^1.7.1",
+    "is-base64": "^0.1.0",
     "param-case": "^2.1.1",
-    "rss-parser": "^3.6.2",
-    "ts-node": "^8.0.2"
+    "rss-parser": "^3.6.2"
   },
   "devDependencies": {
+    "@types/atob": "^2.1.1",
     "@types/dotenv": "^6.1.0",
     "@types/http-errors": "^1.6.1",
     "@types/jest": "^24.0.5",
@@ -47,6 +51,7 @@
     "prettier": "^1.16.4",
     "rimraf": "^2.6.3",
     "ts-jest": "^23.10.5",
+    "ts-node": "^8.0.2",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.3.3"
   },

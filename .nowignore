@@ -1,0 +1,5 @@
+node_modules/
+tmp/
+src/
+!lib/
+lib/__tests__/
