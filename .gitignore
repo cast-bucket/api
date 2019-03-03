@@ -69,6 +69,7 @@ lib/__tests__
 # Certificates and keys
 *.pem
 *.crt
+keyfile 
 
 # 
 tmp
