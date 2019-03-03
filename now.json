@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "name": "cast-bucket-api",
+  "builds": [
+    { "src": "./lib/**/*.js", "use": "@now/node-server", "config": { "maxLambdaSize": "50mb" } }
+  ],
+  "routes": [{ "src": "/v1/(.*)", "dest": "/lib/index.js" }],
+  "env": {
+    "IS_NOW": "true",
+    "APP_NAME": "cast-bucket-api",
+    "API_VERSION": "v1",
+    "FIREBASE_URL": "@db-url"
+  },
+  "public": false
+}

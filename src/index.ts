@@ -1,6 +1,6 @@
 import fastify from "fastify";
 import fastifyCors from "fastify-cors";
-import { IncomingMessage, Server, ServerResponse } from "http";
+import http from "http";
 import "./env";
 
 import Router from "./routes/Router";
@@ -15,9 +15,11 @@ const serverOpts: object = {
 };
 
 // server that takes in three params, httpServer, httpRequest / Incoming Message, HttpResponse
-const server: fastify.FastifyInstance<Server, IncomingMessage, ServerResponse> = fastify(
-  serverOpts
-);
+const server: fastify.FastifyInstance<
+  http.Server,
+  http.IncomingMessage,
+  http.ServerResponse
+> = fastify(serverOpts);
 
 server.listen(PORT, (error: Error, address: string) => {
   if (error) server.log.error(error.message);
