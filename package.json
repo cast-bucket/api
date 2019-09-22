@@ -30,7 +30,7 @@
     "fastify-cors": "^1.0.0",
     "fastify-plugin": "^1.5.0",
     "firebase-admin": "^7.0.0",
-    "http-errors": "^1.7.1",
+    "http-errors": "^1.7.3",
     "is-base64": "^0.1.0",
     "param-case": "^2.1.1",
     "rss-parser": "^3.6.2"
