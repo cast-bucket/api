@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "atob": "^2.1.2",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "encodeurl": "^1.0.2",
     "fast-memoize": "^2.5.1",
     "fastify": "^1.14.1",
