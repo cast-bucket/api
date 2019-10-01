@@ -33,7 +33,7 @@
     "http-errors": "^1.7.3",
     "is-base64": "^0.1.0",
     "param-case": "^2.1.1",
-    "rss-parser": "^3.6.2"
+    "rss-parser": "^3.7.2"
   },
   "devDependencies": {
     "@types/atob": "^2.1.1",
