@@ -9,5 +9,9 @@ The backend infrastructure for cast-bucket.
 
 ### Running it locally
 
-1. `npm install`
-2. `npm run start`
+1. Install dependencies by using `yarn install`.
+2. Use `yarn start` to start the api server.
+
+### Running Tests
+
+Use `yarn test` to run unit tests.
