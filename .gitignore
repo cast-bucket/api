@@ -73,3 +73,6 @@ keyfile
 
 # 
 tmp
+
+# ignore 
+lib
