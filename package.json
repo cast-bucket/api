@@ -63,5 +63,8 @@
   "bugs": {
     "url": "https://github.com/cast-bucket/api/issues"
   },
+  "_moduleAliases": {
+    "@models": "lib/models"
+  },
   "homepage": "https://github.com/cast-bucket/api#readme"
 }

@@ -2,8 +2,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "*": ["src/*"],
-      "credentials": ["src/credentials"]
+      "@config/*": ["src/config/*"],
+      "@models/": ["src/models/index.ts"],
+      "@models/*": ["src/models/*"],
+      "@helpers/*": ["src/helpers/*"],
+      "@credentials": ["src/credentials"]
     },
     // "allowJs": true,
     "target": "es2016",
@@ -16,5 +19,5 @@
     "typeRoots": ["node_modules/@types"]
   },
   "exclude": ["node_modules"],
-  "include": ["src/**/*.ts", "src/**/*.json", "src/*.ts", "*.ts"]
+  "include": ["src/**/*.ts", "src/**/*.json", "src/*.ts", "*.ts", "src/**/*"]
 }
