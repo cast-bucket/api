@@ -1,7 +1,12 @@
+import { FastifyReply, FastifyRequest } from "fastify";
+import * as http from "http";
 import httpError from "http-errors";
 import { getAllCategories, getCategory } from "../models/category.model";
 
-export const fetchAllCategories = async (req, res) => {
+export const fetchAllCategories = async (
+  req: FastifyRequest<http.IncomingMessage>,
+  res: FastifyReply<http.OutgoingMessage>
+) => {
   try {
     const showMetadata: boolean | undefined = req.query.meta === "true";
     const results: any = await getAllCategories(showMetadata);
@@ -11,7 +16,10 @@ export const fetchAllCategories = async (req, res) => {
   }
 };
 
-export const fetchCategory = async (req, res) => {
+export const fetchCategory = async (
+  req: FastifyRequest<http.IncomingMessage>,
+  res: FastifyReply<http.OutgoingMessage>
+) => {
   try {
     const showMetadata: boolean | undefined = req.query.meta === "true";
     const categoryId: string = req.params.categoryId;
