@@ -1,8 +1,13 @@
+import { FastifyReply, FastifyRequest } from "fastify";
 import firebase from "firebase-admin";
+import * as http from "http";
 import httpError from "http-errors";
 import { getAllPodcasts, getPodcast, getPodcastsByCategory } from "../models/podcast.model";
 
-export const fetchAllPodcasts = async (req, res) => {
+export const fetchAllPodcasts = async (
+  req: FastifyRequest<http.IncomingMessage>,
+  res: FastifyReply<http.OutgoingMessage>
+) => {
   try {
     const results: firebase.database.DataSnapshot = await getAllPodcasts();
     res.code(200).send(results);
@@ -11,7 +16,10 @@ export const fetchAllPodcasts = async (req, res) => {
   }
 };
 
-export const fetchPodcastsByCategory = async (req, res) => {
+export const fetchPodcastsByCategory = async (
+  req: FastifyRequest<http.IncomingMessage>,
+  res: FastifyReply<http.OutgoingMessage>
+) => {
   try {
     const categoryId: string = req.params.categoryId;
     if (!categoryId) throw httpError(400, "Missing or invalid parameter: categoryId");
@@ -23,7 +31,10 @@ export const fetchPodcastsByCategory = async (req, res) => {
   }
 };
 
-export const fetchPodcast = async (req, res) => {
+export const fetchPodcast = async (
+  req: FastifyRequest<http.IncomingMessage>,
+  res: FastifyReply<http.OutgoingMessage>
+) => {
   try {
     const categoryId: string = req.params.categoryId;
     const podcastId: string = req.params.podcastId;
