@@ -10,7 +10,7 @@ The backend infrastructure for cast-bucket.
 ### Running it locally
 
 1. Install dependencies by using `yarn install`.
-2. Use `yarn start` to start the api server.
+2. Use `yarn dev` to start the api server with live-reload.
 
 ### Running Tests
 

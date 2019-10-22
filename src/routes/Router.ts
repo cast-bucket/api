@@ -1,8 +1,8 @@
 import fastify from "fastify";
-import { getProgrammingLanguages } from "../models/category.model";
 import { fetchAllCategories, fetchCategory } from "./category.routes";
 import { parseFeed } from "./feed.routes";
 import { fetchAllPodcasts, fetchPodcast, fetchPodcastsByCategory } from "./podcast.routes";
+import { fetchUserHistory, fetchUserProfile, fetchUserSubscriptions } from "./user.routes";
 
 const Router = async (app: fastify.FastifyInstance, options, next) => {
   // misc
@@ -25,6 +25,12 @@ const Router = async (app: fastify.FastifyInstance, options, next) => {
 
   // feed
   app.get("/feed", parseFeed);
+
+  // user
+  app.get("/user/:userId/", fetchUserProfile);
+  app.get("/user/:userId/profile", fetchUserProfile);
+  app.get("/user/:userId/subscriptions", fetchUserSubscriptions);
+  app.get("/user/:userId/history", fetchUserHistory);
 
   next();
 };
