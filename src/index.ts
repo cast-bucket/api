@@ -1,8 +1,8 @@
 import fastify from "fastify";
 import fastifyCors from "fastify-cors";
 import http from "http";
+import "module-alias/register";
 import "./env";
-
 import Router from "./routes/Router";
 
 const ENV: any = process.env;
