@@ -40,7 +40,7 @@
     "@types/dotenv": "^6.1.1",
     "@types/http-errors": "^1.6.2",
     "@types/jest": "^24.0.18",
-    "@types/node": "^12.11.7",
+    "@types/node": "^12.12.14",
     "concurrently": "^5.0.0",
     "cross-env": "^6.0.3",
     "dotenv": "^8.2.0",
@@ -48,13 +48,13 @@
     "jest": "^24.9.0",
     "jest-extended": "^0.11.2",
     "nodemon": "^2.0.1",
-    "prettier": "^1.16.4",
+    "prettier": "^1.19.1",
     "rimraf": "^3.0.0",
     "ts-jest": "^24.1.0",
-    "ts-node": "^8.0.2",
+    "ts-node": "^8.5.2",
     "tslint": "^5.20.0",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.6.4"
+    "typescript": "^3.7.2"
   },
   "repository": {
     "type": "git",
