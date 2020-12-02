@@ -32,7 +32,7 @@
     "http-errors": "^1.7.3",
     "is-base64": "^1.0.0",
     "module-alias": "^2.2.2",
-    "param-case": "^2.1.1",
+    "param-case": "^3.0.4",
     "rss-parser": "^3.7.3"
   },
   "devDependencies": {
